@@ -1,0 +1,17 @@
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            <a href="/" alt="urbank">
+                <img src="images/urbank.png" srcset="images/urbank@2x.png 2x">
+            </a>
+        </div>
+
+        <nav>
+            <ul class="nav">
+                {% for item in navItems %}
+                    <li class="nav__item {% if item.title == 'company' %}nav__item--active{% endif %}"><a class="nav__link" href="{{ item.link | lower | replace(" ", "") }}.html">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>urbank</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    
+
+    {% include "template-parts/_header.njk" %}
+    
+    <div class="wrapper">
+      <main>
+      {% block content %}{% endblock %}
+      </main>
+      <aside>
+      {% block sidebar %}{% endblock %}
+      </aside>
+    </div>
+    {% include "template-parts/_footer.njk" %}
+    
+    <!-- build:js scripts/vendor.js -->
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

@@ -1,0 +1,24 @@
+nav {
+    .nav {
+        display: flex;
+
+        &__item {
+            text-align: center;
+            transition: background .3s;
+            width: 110px;
+        }
+
+        &__link {
+            color: $white;
+            text-decoration: none;
+        }
+
+        &__item--active {
+            background: $blue-dark;
+        }
+
+        &__item:hover {
+            background: $blue-dark;
+        }
+    }
+}
