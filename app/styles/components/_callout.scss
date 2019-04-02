@@ -1,0 +1,27 @@
+.callout {
+    background: $green-dark;
+    margin: 30px 0 50px;
+    padding: 20px;
+    position: relative;
+
+    .container {
+        width: 80%;
+    }
+
+    &__title {
+        @include responsive-font-size($small);
+        color: $purple;
+        margin: 0 0 10px;
+    }
+
+    &__content {
+        @include responsive-font-size($xsmall);
+        margin: 0;
+    }
+
+    &__image {
+        bottom: 10px;
+        position: absolute;
+        right: 5%;
+    }
+}

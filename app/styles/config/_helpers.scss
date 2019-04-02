@@ -1,0 +1,7 @@
+.h {
+  &-hide-on-large {
+    @include mq($min-width: 768px) {
+      display: none;
+    }
+  }
+}

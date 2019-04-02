@@ -1,0 +1,12 @@
+{% macro callout(title, content, image) %}
+<div class="callout">
+    <div class="container">
+        <h2 class="callout__title">{{ title }}</h2>
+        <p class="callout__content">{{ content }}</p>
+
+        {% if image %}
+        <img class="callout__image" src="{{ image }}.png" srcset="{{ image }}@2x.png 2x">
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}
