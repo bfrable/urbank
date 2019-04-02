@@ -1,5 +1,6 @@
 header {
     background: $blue;
+    margin: 0 0 65px;
 
     .logo {
         padding: 5px 0;
@@ -8,5 +9,32 @@ header {
     .nav .nav__link {
         display: block;
         padding: 17px 0;
+    }
+
+    .navigation-toggle {
+        background: none;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        font-size: 18px;
+        outline: none;  
+        position: absolute;
+        right: 10px;
+        top: 14px;
+    }
+
+    .navigation-toggle {
+        &__close {
+            display: none;
+        }
+        &--open {
+            .navigation-toggle__open {
+                display: none;
+            }
+
+            .navigation-toggle__close {
+                display: block;
+            }
+        }
     }
 }

@@ -1,11 +1,19 @@
 nav {
     .nav {
-        display: flex;
+        @include mq($min-width: 768px) {
+            display: flex;
+        }
+
+        display: none;
 
         &__item {
+            @include mq($min-width: 768px) {
+                width: 110px;
+            }
+
             text-align: center;
             transition: background .3s;
-            width: 110px;
+            width: 100%;
         }
 
         &__link {
