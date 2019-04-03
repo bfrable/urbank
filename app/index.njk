@@ -42,6 +42,26 @@
   {{ callout('Amazing Mobile Info', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.', 'images/iphone') }}
 
   <h3><span>Rates  | </span>Check Them Out</h3>
+
+  <table class="table"  id="table">
+    <thead>
+      <tr>
+        <th colspan="1" id="name"></th>
+        <th colspan="1" id="apy">Annual Percentage Yield</th>
+        <th colspan="1" id="earnings">Est. Earnings for 1 Year*</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in banks|sort(true, false, 'apy') %}
+      <tr>
+        <td colspan="1" headers="name" data-header="Name">{{ item.name }}</td>
+        <td colspan="1" headers="apy" data-header="APY">{{ item.apy}}% <!-- TODO: should be a filter --></td>
+        <td colspan="1" headers="earnings" data-header="Earnings">${{ item.earnings}} <!-- TODO: should be a filter --></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
 {% endblock %}
 
 {% block sidebar %}

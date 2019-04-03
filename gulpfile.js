@@ -5,6 +5,8 @@ const browserSync = require('browser-sync');
 const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const data = require('gulp-data');
+const fs = require('fs');
 const { argv } = require('yargs');
 
 const $ = gulpLoadPlugins();
@@ -19,7 +21,11 @@ const isDev = !isProd && !isTest;
 function views() {
   return src('app/*.njk')
     .pipe($.nunjucksRender({
-      path: 'app'
+      path: 'app',
+      manageEnv: function (env) {
+        const data = JSON.parse(fs.readFileSync('./app/data/data.json'));
+        env.addGlobal('banks', data);
+      },
     }))
     .pipe(dest('.tmp'))
     .pipe(server.reload({ stream: true }));

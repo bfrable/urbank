@@ -1,0 +1,106 @@
+table {
+    color: $text;
+    max-width: 100%;
+    text-align: left;
+    width: 100%;
+
+    th {
+        @include responsive-font-size($xxsmall);
+        background-color: $white;
+        padding: 12px;
+    }
+
+    td, th {
+        text-align: left
+    }
+
+    tbody {
+        tr:first-child {
+            font-weight: 600;
+        }
+
+        tr:nth-of-type(odd) {
+            background-color: $green-light;
+        }
+
+        tr:nth-of-type(even) {
+            background-color: $green;
+        }
+
+        th {
+            border: none;
+        }
+
+        td {
+            @include responsive-font-size($small);
+            border-top: none;
+            padding: 12px;
+            text-align: left;
+        }        
+    }
+
+    thead {
+        th abbr {
+            border-bottom: none;
+        }
+    }
+}
+
+@media screen and (max-width:47.99em) {
+    .table {
+        td, th {
+            display: block;
+        }
+    }
+
+    thead tr {
+        display: none;
+    }
+
+    tbody {
+        tr:first-child th {
+            border-top-width: 0;
+            text-align: right;
+        }
+
+        tr:nth-of-type(even) {
+            background-color: transparent
+        }
+
+        td {
+            text-align: left
+        }
+
+        td:before {
+            content: attr(data-header);
+            display: block;
+            font-weight: 300;
+            margin: 0 0 10px;
+        }
+
+        td:empty {
+            display: none;
+        }
+
+        td:nth-of-type(even) {
+            background-color: #f9f8f5;
+        }
+    }
+}
+
+@media screen and (min-width:48em) {
+    .table {
+        thead th:not(:first-child) {
+            text-align: right;
+        }
+        tbody td {
+            text-align: right;
+            &:first-child {
+                text-align: left !important;
+            }
+        }
+        .flush-left td, .flush-left thead th {
+            text-align: left
+        }
+    }
+}
