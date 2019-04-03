@@ -1,8 +1,8 @@
-{% macro modal(content) %}
-<div class="modal">
-    <div class="container">
-        {{ content | safe}}
+{% macro modal(content, attr) %}
+<div class="modal" data-modal="{{ attr }}">
+    <div>
+        <a href="#" title="Close" data-button="{{ attr }}" class="modal-close"><i class="fas fa-times"></i></a>
+        {{ content | safe }}
     </div>
 </div>
-<div class="overlay"></div>
 {% endmacro %}

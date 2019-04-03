@@ -1,0 +1,54 @@
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 0.3s;
+    z-index: 999; 
+
+    &--open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+  
+    &>div {
+        background: #ffffff;
+        color: #333333;
+        left: 50%;
+        padding: 2em;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+    }
+
+    header {
+        font-weight: bold;
+    }
+  
+    h1 {
+        color: #333333;
+        font-size: 150%;
+        margin: 0 0 15px;
+    }
+}
+
+.modal-close {
+    color: #aaa;
+    font-size: 80%;
+    line-height: 50px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    width: 70px;
+    &:hover {
+        color: #000;
+    }
+}
+

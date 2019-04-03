@@ -1,3 +1,3 @@
-{% macro button(title, link, color, classes) %}
-<button href="{{ link }}" class="button button--{{ color }} {{ classes }}">{{ title }}</button>
+{% macro button(title, link, color, classes, attr) %}
+<button href="{{ link }}" class="button button--{{ color }} {{ classes }}" data-button="{{ attr }}">{{ title }}</button>
 {% endmacro %}

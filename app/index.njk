@@ -29,7 +29,7 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ button('Login', '#', 'purple', 'js-login-modal') }}
+  {{ button('Login', '#', 'purple', '', 'login-modal') }}
   {{ tabs() }}
 {% endblock %}
 
@@ -37,6 +37,7 @@
   {{ modal(
     '<div>
       test
-    </div>'
+    </div>',
+    'login-modal'
   ) }}
 {% endblock %}

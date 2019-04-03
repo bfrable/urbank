@@ -41,9 +41,27 @@
                 });
             }
         },
+        modal: (el) => {
+            const btn = document.querySelectorAll('[data-button="' + el + '"]');
+            const modal = document.querySelectorAll('[data-modal="' + el + '"]');
+
+            // TODO: Refactor this
+            btn[0].addEventListener('click', e => {
+                e.preventDefault();
+
+                modal[0].classList.toggle('modal--open');
+            });
+
+            btn[1].addEventListener('click', e => {
+                e.preventDefault();
+
+                modal[0].classList.toggle('modal--open');
+            });
+        },
         init: () => {
             helpers.nav();
             helpers.tabs();
+            helpers.modal('login-modal');
         }
     };
 
