@@ -34,10 +34,33 @@
 {% endblock %}
 
 {% block extras %}
+  <!-- refactor this -->
   {{ modal(
-    '<div>
-      test
-    </div>',
+    '
+      <h2 class="modal__title">Sign In To Your Account</h2>
+      <form class="form">
+        <fieldset>
+
+          <div class="form__group">
+            <label class="form__label" for="username">Username</label>  
+            <div class="form__input-container">
+              <input id="username" name="username" type="text" placeholder="Enter your username" class="form__input">
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="password">Password</label>
+            <div class="form__input-container">
+              <input id="password" name="password" type="password" placeholder="Enter your password" class="form__input">
+            </div>
+          </div>
+
+          <button id="login" name="login" class="form__button button button--purple">Login</button>
+
+        </fieldset>
+      </form>
+
+    ',
     'login-modal'
   ) }}
 {% endblock %}

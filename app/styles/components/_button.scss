@@ -2,6 +2,7 @@
     @include responsive-font-size($medium);
     border: none;
     color: $white;
+    cursor: pointer;
     display: block;
     outline: none;
     padding: 10px;
