@@ -1,0 +1,14 @@
+.button {
+    @include responsive-font-size($medium);
+    border: none;
+    color: $white;
+    display: block;
+    outline: none;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+
+    &--purple {
+        background: $purple;
+    }
+}

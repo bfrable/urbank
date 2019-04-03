@@ -2,6 +2,8 @@
 {% from 'components/_callout.njk' import callout as callout %}
 {% from 'components/_table.njk' import table as table %}
 {% from 'components/_tabs.njk' import tabs as tabs %}
+{% from 'components/_button.njk' import button as button %}
+{% from 'components/_modal.njk' import modal as modal %}
 
 {% block content %}
   <h1>Best Bank Ever!</h1>
@@ -27,6 +29,14 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ button('Login', '#', 'purple') }}
+  {{ button('Login', '#', 'purple', 'js-login-modal') }}
   {{ tabs() }}
+{% endblock %}
+
+{% block extras %}
+  {{ modal(
+    '<div>
+      test
+    </div>'
+  ) }}
 {% endblock %}

@@ -7,12 +7,15 @@
 
 @import "template-parts/header";
 @import "template-parts/footer";
+@import "template-parts/sidebar";
 
 @import "components/navigation";
 @import "components/callout";
 @import "components/table";
 @import "components/tabs";
 @import "components/news-feed";
+@import "components/button";
+@import "components/modal";
 
 body {
   background: $white;
@@ -34,14 +37,16 @@ body {
   width: 100%;
 }
 
+article, aside {
+  padding: 5%;
+  width: 90%;
+}
+
 article {
   @include mq($min-width: 768px) {
     padding: 0 20px 0 0;
-    width: 70%;
+    width: 75%;
   }
-
-  padding: 5%;
-  width: 90%;
 
   h1 {
     @include responsive-font-size($xlarge);
@@ -86,5 +91,8 @@ article {
 }
 
 aside {
-  width: 30%;
+  @include mq($min-width: 768px) {
+    padding: 0;
+    width: 25%;
+  }
 }

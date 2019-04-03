@@ -21,10 +21,12 @@
       <article>
       {% block content %}{% endblock %}
       </article>
-      <aside>
+      <aside class="sidebar">
       {% block sidebar %}{% endblock %}
       </aside>
     </main>
+
+    {% block extras  %}{% endblock %}
     {% include "template-parts/_footer.njk" %}
     
     <!-- build:js scripts/vendor.js -->

@@ -1,0 +1,8 @@
+{% macro modal(content) %}
+<div class="modal">
+    <div class="container">
+        {{ content | safe}}
+    </div>
+</div>
+<div class="overlay"></div>
+{% endmacro %}

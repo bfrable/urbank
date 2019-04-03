@@ -1,7 +1,5 @@
 .tabs-container {
     margin: 20px auto;
-    max-width: 1000px;
-    padding: 25px;
 }
 
 .tabs {
@@ -64,32 +62,4 @@
     &__panel p + div {
         margin-top: 15px;
     }
-}
-
-@media screen and (max-width: 600px) {
-  .tabs {
-    flex-direction: column;
-
-    li {
-        width: 100%;
-
-        &:not(:last-child) {
-            margin-right: 0;
-        }
-
-        a {
-            border-radius: 0;
-            top: 0;
-        }
-
-        &.active a::before {
-            content: "•";
-            padding-right: 5px;
-        }
-    }
-
-    .tabs-content {
-        border-radius: 0;
-    }
-  }
 }
