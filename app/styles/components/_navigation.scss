@@ -17,16 +17,57 @@ nav {
         }
 
         &__link {
+            transition: color .3s;
             color: $white;
             text-decoration: none;
         }
 
         &__item--active {
             background: $blue-dark;
+            font-weight: 500;
         }
 
         &__item:hover {
             background: $blue-dark;
+        }
+    }
+}
+
+footer {
+    nav {
+        .nav {
+            @include mq($min-width: 768px) {
+                display: flex;
+                margin: 0;
+            }
+
+            display: block;
+            margin: 25px 0 0;
+
+            &__item {
+                @include mq($min-width: 768px) {
+                    text-align: right;
+                }
+                
+                margin: 5px 0;
+                text-align: center;
+            }
+
+            &__item--active {
+                background: none;
+            }
+
+            &__item:hover {
+                background: none;
+                
+                a {
+                    color: $purple;
+                }
+            }
+
+            &__link {
+                color: $blue;
+            }
         }
     }
 }

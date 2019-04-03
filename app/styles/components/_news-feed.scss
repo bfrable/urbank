@@ -1,0 +1,23 @@
+.news-feed {
+    &__item {
+        margin: 0 0 25px;
+    }
+
+    &__title {
+        @include responsive-font-size($small);
+        color: $blue;
+        font-weight: 600;
+        margin: 0 0 10px;
+    }
+
+    &__intro {
+        @include responsive-font-size($xsmall);
+        color: $text;
+        line-height: $small;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+    }
+}

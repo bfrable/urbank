@@ -1,1 +1,15 @@
-footer
+<footer class="footer">
+    <div class="wrapper">
+        <div class="footer__legal">
+            &copy; 2014 URBank
+        </div>
+
+        <nav>
+            <ul class="nav">
+                {% for item in navigation %}
+                    <li class="nav__item {% if item.title == 'company' %}nav__item--active{% endif %}"><a class="nav__link" href="{{ item.link | lower | replace(" ", "") }}.html">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</footer>

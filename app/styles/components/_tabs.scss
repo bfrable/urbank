@@ -1,0 +1,95 @@
+.tabs-container {
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 25px;
+}
+
+.tabs {
+    display: flex;
+    position: relative;
+    top: -4px;
+    z-index: 5;
+
+    li:not(:last-child) {
+        margin-right: 7px;
+    }
+
+    li a {
+        background: $green-light;
+        border: 1px solid $border;
+        border-radius: 2px 2px 0 0;
+        color: $blue;
+        display: block;
+        padding: 10px 25px;
+        position: relative;
+        text-decoration: none;
+        top: 12px;
+        transition: all 0.1s ease-in-out;
+    }   
+    
+
+    li.active a {
+        background: $gray;
+        color: $text;
+        top: 0;
+        padding: 14px 25px;
+        top: 5px;
+        border-bottom: 0px;
+    }
+
+    li:first-child {
+        &.active a {
+            border-left: none;
+        }
+    }
+
+    &__content {
+        background: $gray;
+        border-top: 1px solid $border;
+        border-radius: 0 4px 4px 4px;
+        position: relative;
+        z-index: 2;
+        padding: 25px;
+    }
+
+    &__panel {
+        display: none;
+    }
+
+    &__panel--active {
+        background: $gray;
+        display: block;
+    }
+
+    &__panel p + div {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+  .tabs {
+    flex-direction: column;
+
+    li {
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-right: 0;
+        }
+
+        a {
+            border-radius: 0;
+            top: 0;
+        }
+
+        &.active a::before {
+            content: "•";
+            padding-right: 5px;
+        }
+    }
+
+    .tabs-content {
+        border-radius: 0;
+    }
+  }
+}

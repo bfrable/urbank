@@ -17,14 +17,14 @@
 
     {% include "template-parts/_header.njk" %}
     
-    <div class="wrapper">
-      <main>
+    <main class="wrapper">
+      <article>
       {% block content %}{% endblock %}
-      </main>
+      </article>
       <aside>
       {% block sidebar %}{% endblock %}
       </aside>
-    </div>
+    </main>
     {% include "template-parts/_footer.njk" %}
     
     <!-- build:js scripts/vendor.js -->

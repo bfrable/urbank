@@ -1,13 +1,19 @@
 table {
     color: $text;
+    margin: 0 0 40px;
     max-width: 100%;
     text-align: left;
     width: 100%;
 
-    th {
+    th, tfoot {
         @include responsive-font-size($xxsmall);
         background-color: $white;
         padding: 12px;
+    }
+
+    tfoot tr td {
+        text-align: right;
+        padding: 10px;
     }
 
     td, th {
@@ -39,7 +45,7 @@ table {
         }        
     }
 
-    thead {
+    thead, tfoot {
         th abbr {
             border-bottom: none;
         }
@@ -53,12 +59,12 @@ table {
         }
     }
 
-    thead tr {
+    thead tr, tfoot tr {
         display: none;
     }
 
     tbody {
-        tr:first-child th {
+        tr:first-child th, tr:first-child tfoot tr td {
             border-top-width: 0;
             text-align: right;
         }
@@ -90,7 +96,7 @@ table {
 
 @media screen and (min-width:48em) {
     .table {
-        thead th:not(:first-child) {
+        thead th:not(:first-child), tfoot th:not(:first-child) {
             text-align: right;
         }
         tbody td {

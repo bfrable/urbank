@@ -1,0 +1,31 @@
+{% from 'components/_news-feed.njk' import newsfeed as newsfeed %}
+
+<!-- make a reusable component -->
+{% macro tabs() %}
+<div class="tabs-container">
+    <ul class="tabs">
+        <li class="active">
+            <a href="">News</a>
+        </li>
+        <li>
+            <a href="">Archive</a>
+        </li>
+    </ul>
+    <div class="tabs__content">
+        <div class="tabs__panel tabs__panel--active" data-index="0">
+            <ul class="news-feed">
+                {{ newsfeed('Lorem ipsum dolor', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.') }}
+                {{ newsfeed('Lorem ipsum dolor', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.') }}
+                {{ newsfeed('Lorem ipsum dolor', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.') }}
+            </ul>
+        </div>
+        <div class="tabs__panel" data-index="1">
+            <ul class="news-feed">
+                {{ newsfeed('Lorem ipsum dolor', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.') }}
+                {{ newsfeed('Lorem ipsum dolor', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.') }}
+                {{ newsfeed('Lorem ipsum dolor', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.') }}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endmacro %}

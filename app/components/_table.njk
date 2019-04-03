@@ -1,0 +1,28 @@
+<!-- make a reusable component -->
+{% macro table() %}
+<table class="table"  id="table">
+    <thead>
+        <tr>
+        <th colspan="1" id="name"></th>
+        <th colspan="1" id="apy">Annual Percentage Yield</th>
+        <th colspan="1" id="earnings">Est. Earnings for 1 Year*</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in banks|sort(true, false, 'apy') %}
+        <tr>
+        <td colspan="1" headers="name" data-header="Name">{{ item.name }}</td>
+        <td colspan="1" headers="apy" data-header="APY">{{ item.apy}}% <!-- TODO: should be a filter --></td>
+        <td colspan="1" headers="earnings" data-header="Earnings">${{ item.earnings}} <!-- TODO: should be a filter --></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+        <td></td>
+        <td></td>
+        <td>*Based on $50,000 deposit.</td>
+        </tr>
+    </tfoot>
+</table>
+{% endmacro %}

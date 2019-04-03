@@ -24,7 +24,9 @@ function views() {
       path: 'app',
       manageEnv: function (env) {
         const data = JSON.parse(fs.readFileSync('./app/data/data.json'));
+        const navigation = JSON.parse(fs.readFileSync('./app/data/navigation.json'));
         env.addGlobal('banks', data);
+        env.addGlobal('navigation', navigation);
       },
     }))
     .pipe(dest('.tmp'))
