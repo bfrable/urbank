@@ -9,3 +9,10 @@ I realize and understand that this project is not pixel perfect in comparison to
 There are also some things I would have done differently but due to time contrainst I referenced those areas with comments acknowledging I was aware there is a better way to do it. It also probably not completely accessible. But for the sake of mentioning it, I do have extensive experience with accessibility / accessibility testing. 
 
 I enjoyed the project and appreciate the opportunity.
+
+If you want to clone the project locally and try running it.
+
+1. npm install
+2. npm run start
+
+Thannks again.
